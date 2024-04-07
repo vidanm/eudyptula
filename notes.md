@@ -80,4 +80,37 @@ fail:
 - Il existe aussi la fonction `kobject\_register(struct kobject \*kobj)` qui regroupe les fonctions kobject\_init et kobject\_add
 - kobject_del pour le suppr du kset (ou kobject_unregister)
 - schema disponible p370
+
+#### Attributs par défaut
+- Les Kobject ont des attributs par défaut défini dans leur kobj_type associés
+- Ces attribus par défaut doivent être définis et seront crées pour chaque kobjet de ce type
+- kobj_type -> sysfs_ops permets d'implémenter les méthodes show et store pour les attributs par défaut
+- Pour show il faut que la valeur soit encodé dans `buffer` et qu'elle retourne la taille des données de buffer (max PAGE_SIZE)
+- La méthode show est la même pour tous les attribus d'un kobject donné
+- La méthode store decode les données de buffer puis la stocke et renvoi le nombre d'octets décodés
+- Il vaut mieux renvoyer un nombre négatif s'il y'a une erreur dans les données en argument que risquer des problèmes plus difficiles
+
+#### Autres attributs
+- En général un kobject n'a pas besoin d'attributs supplémentaires à ceux par défaut mais les attributs peuvent être ajoutés et supprimés à guise (Pour ajouter un attribut voir p374)
+
+#### Attributs binaires
+- `struct bin\_attribute`
+- Nécessaires quand les données sont conséquentes et ne doivent pas être modifiés
+- Ils ne peuvent pas être compris dans les attributs par défaut et doivent être crées à part (p375)
+
+#### Hotplugs
+- Invocation de `/sbin/hotplug/`
+- `struct kset\_hotplug\_ops` (p376)
+- la méthode filter permets de filtrer quels événements concernant l'hotplug doit être passé côté user space
+- si filter return 0 l'event n'est pas créé
+- La méthode hotplug permets d'ajouter des variables d'environnements 
+- Si on ajoute des variables à envp il faut impérativement ajouter NULL à la fin pour prévenir le kernel de la fin de nos ajouts
+- La valeur de retour de hotplug doit être 0
+
+#### Buses, Devices, Drivers
+- bus : `struct bus\_type`
+- voir lddbus
 - 
+
+#### Divers
+- Possibilité de créer des liens symboliques

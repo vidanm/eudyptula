@@ -107,9 +107,15 @@ fail:
 - Si on ajoute des variables à envp il faut impérativement ajouter NULL à la fin pour prévenir le kernel de la fin de nos ajouts
 - La valeur de retour de hotplug doit être 0
 
-#### Buses, Devices, Drivers
+#### Buses
 - bus : `struct bus\_type`
 - voir lddbus
+- p378
+
+#### Devices
+- struct device
+- p381
+- device_register / _unregister
 - 
 
 #### Divers

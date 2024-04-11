@@ -1,4 +1,4 @@
-# Task 2
+# Task 3
 ## Building and booting
 https://wiki.archlinux.org/title/Kernel/Traditional_compilation
 

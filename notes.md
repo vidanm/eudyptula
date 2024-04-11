@@ -120,3 +120,4 @@ fail:
 
 #### Divers
 - Possibilité de créer des liens symboliques
+- Verifier le formatting des fichiers avec `checkpatch.pl -f --no-tree module.c`

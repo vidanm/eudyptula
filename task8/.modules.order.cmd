@@ -1,0 +1,1 @@
+savedcmd_/home/vidan/Documents/Personnel/eudyptula-challenge/task8/modules.order := {   echo /home/vidan/Documents/Personnel/eudyptula-challenge/task8/hello.o; :; } > /home/vidan/Documents/Personnel/eudyptula-challenge/task8/modules.order

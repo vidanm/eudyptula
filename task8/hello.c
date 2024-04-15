@@ -9,7 +9,8 @@
 #define USER_ID_LENGTH 9 //\0
 
 MODULE_LICENSE("Dual BSD/GPL");
-static DEFINE_SEMAPHORE(foo_sem,1); //DECLARE_MUTEX HAS BEEN RENAMED TO DEFINE_SEMAPHORE
+				    //Linux Device Drivers Chapter 05
+static DEFINE_SEMAPHORE(foo_sem,1); //DECLARE_MUTEX HAS BEEN RENAMED TO DEFINE_SEMAPHORE 
 
 /* fid file fops */
 static ssize_t fid_read(struct file *filp, char __user *buf, size_t len, loff_t *f_pos) {

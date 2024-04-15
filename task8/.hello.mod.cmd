@@ -1,1 +1,0 @@
-savedcmd_/home/vidan/Documents/Personnel/eudyptula-challenge/task8/hello.mod := printf '%s\n'   hello.o | awk '!x[$$0]++ { print("/home/vidan/Documents/Personnel/eudyptula-challenge/task8/"$$0) }' > /home/vidan/Documents/Personnel/eudyptula-challenge/task8/hello.mod
